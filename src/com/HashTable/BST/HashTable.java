@@ -1,28 +1,32 @@
 package com.HashTable.BST;
 
-public class HashTable {
-	  public void remove(String str ,String word){
-	        // split The String Using Split () method
-	        String [] msg = str.split(" ");
-	        String new_wrd = " ";
-	        // Iterating By using for each loop
-	        for(String words:msg){
-	            if(!words.equals(word)){
-	                new_wrd += words+" ";
+import java.util.HashMap;
+import java.util.Set;
 
+public class HashTable {
+	  static void sentence(String inputString){
+	        HashMap<String,Integer> count = new HashMap<>();
+	        count = new HashMap<>();
+	        String [] words = inputString.split(" ");
+	        for(String word: words){
+	            if(count.containsKey(word)){
+	                count.put(word, count.get(word)+1);
+	            }else{
+	                count.put(word,1);
 	            }
 	        }
-	        System.out.println(new_wrd);
+	        Set<String> wordInString = count.keySet();
+	        System.out.println("Frequency In word 'To Be Or Not To Be' is");
+	        for (String word:wordInString){
+	            if(count.get(word)>1){
+	                System.out.println(word+ " :"+count.get(word));
+	            }
+	        }
 	    }
+
 	    public static void main(String[] args) {
-	        String str = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
-	        // Word Remove From String Word
-	      String word =  "avoidable";
-	      // calling Method By passing Both String
-	        HashTable tree = new HashTable();
-	
-	        
-	        tree.remove(str,word);
+	    	System.out.println("Welcome To HashTable & Binary Search Tree Program");
+	        sentence("To Be Or Not To Be");
 	    }
 	
 }
