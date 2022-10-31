@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Set;
 
 public class HashTable {
-	  static void sentence(String inputString){
+	 static void sentence(String inputString){
 	        HashMap<String,Integer> count = new HashMap<>();
 	        count = new HashMap<>();
 	        String [] words = inputString.split(" ");
@@ -16,8 +16,11 @@ public class HashTable {
 	            }
 	        }
 	        Set<String> wordInString = count.keySet();
-	        System.out.println("Frequency In word 'To Be Or Not To Be' is");
-	        for (String word:wordInString){
+	        System.out.println("Frequency of words in sentence 'To be or not to be' is");
+	        System.out.println("Frequency of words in sentence 'Paranoids are not paranoid because"
+	                + " they are paranoid but because they keep putting themselves deliberately into"
+	                + " paranoid avoidable situations' is");
+	               for (String word:wordInString){
 	            if(count.get(word)>1){
 	                System.out.println(word+ " :"+count.get(word));
 	            }
@@ -25,8 +28,9 @@ public class HashTable {
 	    }
 
 	    public static void main(String[] args) {
-	    	System.out.println("Welcome To HashTable & Binary Search Tree Program");
 	        sentence("To Be Or Not To Be");
+	        sentence("Paranoids are not paranoid because they are paranoid but because "
+	                + "they keep putting themselves deliberately into paranoid avoidable situations");
 	    }
 	
 }
