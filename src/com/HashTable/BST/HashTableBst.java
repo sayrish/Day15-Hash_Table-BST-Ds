@@ -1,8 +1,5 @@
 package com.HashTable.BST;
 
-import java.util.HashMap;
-import java.util.Set;
-
 public class HashTableBst {
 	  public void remove(String str ,String word){
 	        // split The String Using Split () method
